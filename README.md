@@ -1,2 +1,2 @@
-# -le-m-decin
+# -le medecin
 Official Repository for Intra MIC hackathon-Team Silicon
