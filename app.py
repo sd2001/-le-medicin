@@ -11,6 +11,10 @@ def home():
         return str(val3)
     return render_template('htmlform.html')
 
+@app.route("/chatbot")
+def chatbot_test():
+    
+
 if __name__=="__main__":
     app.run(debug=True)
     
