@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Inkblot Test</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/styles_tests.css " type="text/css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Le Médecine</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="doctor_info.html">Consult a Doctor <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+
+          <h1 class="text-center">Inkblot Test</h1>
+          <form action='/tests/self_assess' method='POST'>
+          {% with messages = get_flashed_messages() %}
+						{% if messages %}
+						<div align ='center' class="container box2">
+								{{messages[0]}}
+							</div>
+						{% endif %}
+					{% endwith %} 
+                    <hr>
+          
+          <div class="container box">
+          <br><div align="center">  
+          <img src="../static/images/2.jpg" width=500 height=400>
+          </div><br>
+              <div class="row">
+                  <div class="col">
+                      <br>
+                          <li>Have you ever experienced an ‘attack’ of fear, anxiety, or panic?
+                              <ul>
+                                  <br><li><input type="radio" value=-10 id="yes" name="fear">
+                                    <label for="yes">Yes, a few times</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="fear">
+                                    <label for="yes">Never</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="fear">
+                                    <label id="no">A lot of times</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>

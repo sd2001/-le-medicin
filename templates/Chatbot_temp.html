@@ -22,7 +22,7 @@ var userHtml = '<p class = "userText"><span>' + rawText + '</span></p>';
 $("#textInput").val("");
 $("#chatbox").append(userHtml);
 document.getElementById('userInput').scrollIntoView({block:'start',behaviour:'smooth'});
-$.get("/get", {msg:rawText }).done(function(data) {
+$.get("/tests/chatbot_get", {msg:rawText }).done(function(data) {
 var botHtml = '<p class ="botText"><span>' + data + '</span></p>';
 $("#chatbox").append(botHtml);
 document.getElementById('userInput').scrollIntoView({block : 'start',behaviour:'smooth'});

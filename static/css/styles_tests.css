@@ -8,6 +8,10 @@ body{
     font-family:'Dancing Script', cursive;
     font-size:2rem;
 }
+.container{
+    width:700px
+}
+
 .bg-dark{
     background-color: #388e3c !important;
 
@@ -24,6 +28,13 @@ h1{
     padding:20px;
     border-style:solid;
     background-color: /*#dcedc8*/ #c5e1a5;
+}
+
+.box2{
+    margin-top:30px;
+    padding:20px;
+    border-style:solid;
+    background-color: /*#dcedc8*/ #e99f4b;    
 }
 .btn-primary{
     background-color: #cddc39;
