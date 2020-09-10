@@ -19,14 +19,14 @@
       },
       {"tag" : "name" ,
         "patterns": ["Whats name","Your Name","Ur Name","What should I call you"],
-        "responses":["I am Arsona",
-            "Arsona is my name",
-             "You can call me Arsona"]
+        "responses":["I am Mr Helth",
+            "Mr Helth is my name",
+             "You can call me Mr Helth"]
 
       },
       {
         "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye"],
+        "patterns": ["Bye", "See you later", "Goodbye","I will leave now","Tata"],
         "responses": [
           "See you later, thanks for visiting",
           "Have a nice day",
@@ -35,56 +35,164 @@
       },
       {
         "tag": "thanks",
-        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+        "patterns": ["ok","Ok","Okay","Thanks", "Thank you", "That's helpful", "Thank's a lot!","You are the best","Best suggestions","Best Advice","Good Job",
+        "Superb","Awesome","Excellent","Definitely"],
         "responses": ["Happy to help!", "Any time!", "My pleasure"]
-      },
+      },      
       {
-        "tag": "items",
+        "tag": "sadness",
         "patterns": [
-          "Which items do you have?",
-          "What kinds of items are there?",
-          "What do you sell?"
+          "I dont feel well",
+          "I dont well good",
+          "I feel lonely",
+          "I feel sad and depressed",
+          "Dont feel like doing anything",
+          "Please help me out",
+          "I need to assess myself",
+          "I need to know my mental status",
+          "My mental condition",
+          "My Mind"
+
         ],
         "responses": [
-          "We sell coffee and tea",
-          "We have coffee and tea"
+          "Try taking the tests available, that will help you definitely",
+          "Consult Dr A, he'll help you out"
         ]
       },
       {
-        "tag": "payments",
+        "tag": "hospital names",
         "patterns": [
-          "Do you take credit cards?",
-          "Do you accept Mastercard?",
-          "Can I pay with Paypal?",
-          "Are you cash only?"
+          "Show me nearby hospitals",
+          "Hospitals",
+          "Clinics nearby",
+          "Chambers nearby",
+          "Healthcare nearby",
+          "Medical help or assistance nearby"
         ],
         "responses": [
-          "We accept VISA, Mastercard and Paypal",
-          "We accept most major credit cards, and Paypal"
+          "Hi!Head over to the Nearby Page",
+          "Please go to the nearby page"
         ]
       },
       {
-        "tag": "delivery",
+        "tag": "killy",
         "patterns": [
-          "How long does delivery take?",
-          "How long does shipping take?",
-          "When do I get my delivery?"
+          "Show me how to kill",
+          "How to kill or murder",
+          "How to stab someone",
+          "How to delete someone",
+          "make fun of someone",
+          "Death",
+          "Kill myself",
+          "Hang myself",
+          "Commit suicide",
+          "Suicide and kill",
+          "Hanging",
+          "Killing",
+          "Thinking of hanging",
+          "Commit Crime",
+          "Death of someone",
+          "Died"
         ],
         "responses": [
-          "Delivery takes 2-4 days",
-          "Shipping takes 2-4 days"
+          "Its a sin to say so.Amen!",
+          "Good Gracious! Please dont think of such",
+          "God didn't create us for doing this"
         ]
       },
       {
-        "tag": "funny",
+        "tag": "shop names",
+        "patterns": [
+          "Show me nearby shops or pharmacies",
+          "Stores or medical shops",
+          "Shops nearby",
+          "Medical retailers nearby",
+          "Medicine nearby"
+        ],
+        "responses": [
+          "Hi! Head over to the Nearby Page",
+          "Please go to the nearby page"
+        ]
+      },
+      {
+        "tag": "heppy",
+        "patterns": [
+          "I am really happy",
+          "I feel great",
+          "Lol",
+          "ROFL",
+          "Hahahaha",
+          "Thanks for making me happy",
+          "Awesome and happy",
+          "Joyous and energetic and motivated"
+        ],
+        "responses": [
+          "Makes me feel great",
+          "Pleasure to know that",
+          "Ohh great"
+        ]
+      },
+      {
+        "tag": "jealous",
+        "patterns": [
+          "I love Siri and cortana",
+          "I like Siri and Cortana more than you",
+          "siri and Cortana are better",
+          "Siri and Cortana are the best",
+          "You are the worst chatbot ever",
+          "I know better chatbots",
+          "I dont want you",
+          "You are of no use",
+          "You are rubbish",
+          "You are bad",
+          "You are not good"
+        ],
+        "responses": [
+          "Ohh please don't say that! I am better than Siri and Cortana",
+          "Better not talk about other LOL chatbots",
+          "Trust me, I am more helpful than Siri and Cortana",
+          "Hella no!! I love and appreciate talking to you."
+        ]
+      },      
+      {
+        "tag": "work",
+        "patterns": [
+          "What do you do?",
+          "Whats your use?",
+          "What are you for?",
+          "Your work?",
+          "Your purpose",
+          "How can you help me?",
+          "Help me out!",
+          "Evaluate me"
+        ],
+        "responses": [
+          "I am there to serve visionaries like you",
+          "I love helping people like you",
+          "I love to help mankind and make it better."
+        ]
+      },
+      
+      { "tag": "funny",
         "patterns": [
           "Tell me a joke!",
           "Tell me something funny!",
-          "Do you know a joke?"
-        ],
+          "Do you know a joke?",
+          "Cheer me up",
+          "Make me laugh",
+          "Make me happy",
+          "Make my day better",
+          "Funny"],
         "responses": [
           "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-          "What did the buffalo say when his son left for college? Bison."
+          "What did the buffalo say when his son left for college? Bison.",
+          "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+          "What's the difference between a good joke and a bad joke timing.",
+          "Dentist: You need a crown. Patient: Finally someone who understands me",
+          "Don’t trust atoms, they make up everything.",
+          "Most people are shocked when they find out how bad I am as an electrician.",
+          "Why do bees hum? They don’t remember the lyrics!",
+          "Whenever I lose my TV controller, I always find it at a remote location."
         ]
       }
     ]

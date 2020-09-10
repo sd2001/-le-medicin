@@ -103,7 +103,7 @@ def inkblot():
         elif score>100:
             mssg="Awesome, thats the motivation we need"
         elif score<50 and score>0:
-            mssg="Try to stay motiavted always. We would recommend you to consult Dr A"            
+            mssg="Try to stay motivated always. We would recommend you to consult Dr A"            
         elif score<0:
             mssg="Its highly important for you to consult Dr A, before something big happens."
         
