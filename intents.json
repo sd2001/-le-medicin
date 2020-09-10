@@ -19,10 +19,9 @@
       },
       {"tag" : "name" ,
         "patterns": ["Whats name","Your Name","Ur Name","What should I call you"],
-        "responses":["I am Mr Helth",
-            "Mr Helth is my name",
-             "You can call me Mr Helth"]
-
+        "responses":["I am MedBot",
+            "MedBot is my name",
+             "You can call me MedBot"]
       },
       {
         "tag": "goodbye",
