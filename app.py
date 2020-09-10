@@ -88,6 +88,27 @@ def self_assess():
 
 @app.route("/tests/inkblot",methods=['GET','POST'])
 def inkblot():
+    if request.method=='POST':
+        score=50
+        fear=request.form.get('1')
+        eat=request.form.get('2')
+        confidence=request.form.get('3')
+        future=request.form.get('4')
+        relation=request.form.get('5')
+        
+        score=score+int(fear)+int(eat)+int(confidence)+int(future)+int(relation)
+        mssg=""
+        if score>50 and score<100:
+            mssg="Great, make your days even better"
+        elif score>100:
+            mssg="Awesome, thats the motivation we need"
+        elif score<50 and score>0:
+            mssg="Try to stay motiavted always. We would recommend you to consult Dr A"            
+        elif score<0:
+            mssg="Its highly important for you to consult Dr A, before something big happens."
+        
+        flash(mssg)
+        return render_template('inkblot.html')
     return render_template('inkblot.html')
         
     

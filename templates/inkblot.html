@@ -26,7 +26,7 @@
           </nav>
 
           <h1 class="text-center">Inkblot Test</h1>
-          <form action='/tests/self_assess' method='POST'>
+          <form action='/tests/inkblot' method='POST'>
           {% with messages = get_flashed_messages() %}
 						{% if messages %}
 						<div align ='center' class="container box2">
@@ -38,24 +38,143 @@
           
           <div class="container box">
           <br><div align="center">  
-          <img src="../static/images/2.jpg" width=500 height=400>
+          <img src="../static/images/1.jpg" width=500 height=400>
           </div><br>
               <div class="row">
                   <div class="col">
                       <br>
-                          <li>Have you ever experienced an ‘attack’ of fear, anxiety, or panic?
+                          <li>Which of the option, best describes the above picture according to you?
                               <ul>
-                                  <br><li><input type="radio" value=-10 id="yes" name="fear">
-                                    <label for="yes">Yes, a few times</label>
+                                  <li><input type="radio" value=-10 id="yes" name="1">
+                                    <label for="yes">I can see evil fantastic or mythological creature-witch, devil, dragon, elf, goblin, etc.</label>
                                   </li>
-                                  <li><input type="radio" value=20 id="yes" name="fear">
-                                    <label for="yes">Never</label>
+                                  <li><input type="radio" value=10 id="yes" name="1">
+                                    <label for="yes">Reminds me the shape of a pet animal, the face of an animal-cat, dog, bat, beetle, etc. </label>
                                   </li>
-                                  <li><input type="radio" value=-20 id="no"name="fear">
-                                    <label id="no">A lot of times</label>
+                                  <li><input type="radio" value=20 id="yes" name="1">
+                                    <label for="yes">I visualize the abstract concept - love, power, friendship, loyalty, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="1">
+                                    <label id="no">It looks something quite scary to me</label>
                                 </li>
                               </ul>
                           </li>                      
                   </div>
               </div>
           </div>
+          <div class="container box">
+          <br><div align="center">  
+          <img src="../static/images/2.jpg" width=500 height=400>
+          </div><br>
+              <div class="row">
+                  <div class="col">
+                      <br>
+                          <li>Which of the option, best describes the above picture according to you?
+                              <ul>
+                                  <li><input type="radio" value=-10 id="yes" name="2">
+                                    <label for="yes">I can see evil fantastic or mythological creature-witch, devil, dragon, elf, goblin, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=10 id="yes" name="2">
+                                    <label for="yes">Reminds me the shape of a pet animal, the face of an animal-cat, dog, bat, beetle, etc. </label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="2">
+                                    <label for="yes">I visualize the abstract concept - love, power, friendship, loyalty, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="2">
+                                    <label id="no">It looks something quite scary to me</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+          <br><div align="center">  
+          <img src="../static/images/3.jpg" width=500 height=400>
+          </div><br>
+              <div class="row">
+                  <div class="col">
+                      <br>
+                          <li>Which of the option, best describes the above picture according to you?
+                              <ul>
+                                  <li><input type="radio" value=-10 id="yes" name="3">
+                                    <label for="yes">I can see evil fantastic or mythological creature-witch, devil, dragon, elf, goblin, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=10 id="yes" name="3">
+                                    <label for="yes">Reminds me the shape of a pet animal, the face of an animal-cat, dog, bat, beetle, etc. </label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="3">
+                                    <label for="yes">I visualize the abstract concept - love, power, friendship, loyalty, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="3">
+                                    <label id="no">It looks something quite scary to me</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+          <br><div align="center">  
+          <img src="../static/images/4.jpg" width=500 height=400>
+          </div><br>
+              <div class="row">
+                  <div class="col">
+                      <br>
+                          <li>Which of the option, best describes the above picture according to you?
+                              <ul>
+                                  <li><input type="radio" value=-10 id="yes" name="4">
+                                    <label for="yes">I can see evil fantastic or mythological creature-witch, devil, dragon, elf, goblin, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=10 id="yes" name="4">
+                                    <label for="yes">Reminds me the shape of a pet animal, the face of an animal-cat, dog, bat, beetle, etc. </label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="4">
+                                    <label for="yes">I visualize the abstract concept - love, power, friendship, loyalty, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="4">
+                                    <label id="no">It looks something quite scary to me</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+          <br><div align="center">  
+          <img src="../static/images/5.jpg" width=500 height=400>
+          </div><br>
+              <div class="row">
+                  <div class="col">
+                      <br>
+                          <li>Which of the option, best describes the above picture according to you?
+                              <ul>
+                                  <li><input type="radio" value=-10 id="yes" name="5">
+                                    <label for="yes">I can see evil fantastic or mythological creature-witch, devil, dragon, elf, goblin, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=10 id="yes" name="5">
+                                    <label for="yes">Reminds me the shape of a pet animal, the face of an animal-cat, dog, bat, beetle, etc. </label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="5">
+                                    <label for="yes">I visualize the abstract concept - love, power, friendship, loyalty, etc.</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="5">
+                                    <label id="no">It looks something quite scary to me</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div><br><br>
+
+
+          <div align="center">
+          <button class="btn btn-danger">Submit</button>          
+          </div>    
+            
+          </form>          
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body><br><br><br><br><br><br>
+</html>
