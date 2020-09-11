@@ -87,3 +87,16 @@ margin-right:27%;
 .shop{
     margin-top:20px;
 }
+.display-4{
+    color:white;
+}
+select{
+    margin:5px;
+}
+.hosp li{
+    display:inline;
+    margin:10px;
+}
+.margin{
+    margin:20px !important;
+}

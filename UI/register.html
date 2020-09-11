@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Welcome!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="css\styles.css " type="text/css">
+      </head>
+      <body>
+          <!--navbar-->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="#">Le Médecine</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.html">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="register.html">Register <span class="sr-only">(current)</span></a>
+                      </li>
+              </ul>
+            </div>
+          </nav>
+          <h1 class="text-center">Register</h1>
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                    <ul class="hosp">
+                        <li><input type="radio" value="Doctor" id="Doctor" name="choice">
+                          <label for="Doctor">Doctor</label>
+                      </li>
+                        <li><input type="radio" value="Pharmacy" id="Patient" name="choice">
+                          <label for="Patient">Patient</label>
+                      </li>
+                    </ul>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><a href="patient_home.html">Submit</a></button>
+                  </form>
+                </div>
+              </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>
