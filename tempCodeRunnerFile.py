@@ -1,1 +1,0 @@
-/tests/chatbot_get
