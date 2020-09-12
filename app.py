@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,flash
+from flask import Flask,render_template,request,flash,redirect,url_for
 import random
 import torch
 import json
@@ -8,17 +8,37 @@ from basics import bag_of_words, tokenize, stem
 app=Flask(__name__)
 app.secret_key = 'hellouserapi'
 
-@app.route("/",methods=['GET','POST'])
-def home():
-    if request.method=='POST':
-        val1=request.form.get('gender')
-        val2=request.form.get('gender2')
-        val3=int(val1)+int(val2)
-        return str(val3)
-    return render_template('htmlform.html')
+@app.route("/")
+def login():    
+    return render_template('login.html')
+
+
+
+@app.route("/d",methods=['POST'])
+def doctor():
+    email_d=request.form.get('doctor_email')
+    pass_d=request.form.get('doctor_pass')
+    return redirect(url_for('doctor_home'))
+
+
+@app.route("/p",methods=['POST'])
+def patient():
+    email_p=request.form.get('patient_email')
+    pass_p=request.form.get('patient_pass')
+    return redirect(url_for('test'))
+
+
+@app.route("/doctor_home")
+def doctor_home():
+    return render_template('doctor_home.html')
+    
+
+@app.route("/tests")
+def test():
+    return render_template('patient_home.html')
 
 @app.route("/tests/chatbot")
-def index():
+def chat():
      return render_template("Chatbot_temp.html")
 
 @app.route("/tests/chatbot_get")
@@ -84,7 +104,7 @@ def self_assess():
         
         flash(mssg)
         return render_template('self-assessment.html')
-    return render_template('self-assessment.html')
+    return render_template('self-assessment2.html')
 
 @app.route("/tests/inkblot",methods=['GET','POST'])
 def inkblot():
