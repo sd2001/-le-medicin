@@ -2,7 +2,7 @@
     <head>
         <title>Welcome!</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="css\styles.css " type="text/css">
+        <link rel="stylesheet" href="../static/css/styles.css " type="text/css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -12,8 +12,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="patient_home.html">Home</a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="patient_home.html">Home  <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="doctor_info.html">Consult a Doctor</a>
@@ -31,25 +31,48 @@
             </div>
           </nav>
 
-          <h1 class="text-center"> Self-Assesment Test</h1>
-          <div class="container box">
-              <div class="row">
-                  <div class="col">
-                      <ol>
-                          <li>Do you feel like listening to some music?
-                              <ul>
-                                  <li><input type="radio" value="Yes" id="yes" name="choice">
-                                    <label for="yes">Yes</label>
-                                </li>
-                                  <li><input type="radio" value="No" id="no"name="choice">
-                                    <label for="no">No</label>
-                                </li>
-                              </ul>
-                          </li>
-                      </ol>
-                  </div>
-              </div>
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h4 class="display-6 text-center">Don’t stop when you’re tired. Stop when you’re done.</h4>
+             </div>
           </div>
+
+          <div class="container">
+              <div class="row">
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/static/images/inkblot.jpg" class="card-img-top" alt="Inkblot test">                        
+                        <div class="card-body">
+                          <h6 class="card-text text-center">
+                          <a href="/tests/inkblot">Inkblot Test
+                          </a>
+                          </h6>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/static/images/self-aT.jpg" class="card-img-top" alt="Self-assessment Test">
+                        <div class="card-body">
+                          <h6 class="card-text text-center"><a href="/tests/self_assess">Self-Assessment Test</a></h6>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/static/images/chatbot.jpg" class="card-img-top" alt="chatbot">                        
+                        <div class="card-body">
+                          <h6 class="card-text text-center">
+                          <a href="/tests/chatbot">Virtual Health Chatbot
+                          </a>
+                          </h6>
+                        </div></a>
+                      </div>
+                </div>
+              </div>
+
+          </div>
+         
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

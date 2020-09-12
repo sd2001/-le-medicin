@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <title>Self Assessment!</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/styles_tests.css " type="text/css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Le Médecine</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="doctor_info.html">Consult a Doctor <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+
+          <h1 class="text-center">Self-Assesment Test</h1>
+          <form action='/tests/self_assess' method='POST'>
+          {% with messages = get_flashed_messages() %}
+						{% if messages %}
+						<div align ='center' class="container box2">
+								{{messages[0]}}
+							</div>
+						{% endif %}
+					{% endwith %} 
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                      <br>
+                          <li>Have you ever experienced an ‘attack’ of fear, anxiety, or panic?
+                              <ul>
+                                  <br><li><input type="radio" value=-10 id="yes" name="fear">
+                                    <label for="yes">Yes, a few times</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="fear">
+                                    <label for="yes">Never</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="fear">
+                                    <label id="no">A lot of times</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                     <br>
+                          <li>Have your eating habits altered in any way, over the past few days?
+                              <ul>
+                                  <br><li><input type="radio" value=-10 id="yes" name="eat">
+                                    <label for="yes">Not much, but its unexpected</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="eat">
+                                    <label for="yes">Not really</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="eat">
+                                    <label id="no">Yes, very badly</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                     <br>
+                          <li>How confident you have been feeling in your capabilities recently?
+                              <ul>
+                                  <br><li><input type="radio" value=-10 id="yes" name="confidence">
+                                    <label for="yes">Not much,unexpectedly</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="confidence">
+                                    <label for="yes">Quite Positive and Energetic</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="confidence">
+                                    <label id="no">Low on Confidence and demotivated mostly</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                     <br>
+                          <li>How often have you felt as though the future is bleak, over the past few days?
+                              <ul>
+                                  <br><li><input type="radio" value=10 id="yes" name="future">
+                                    <label for="yes">Not much,but its definitely for a better & brighter future</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="future">
+                                    <label for="yes">Never, my future is the brightest</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="future">
+                                    <label id="no">Quite often and I really don't know why</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                     <br>
+                          <li>How supported you feel by others around you – your friends, family, or otherwise?
+                              <ul>
+                                  <br><li><input type="radio" value=10 id="yes" name="relation">
+                                    <label for="yes">Not much,but that me even stronger every time</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="relation">
+                                    <label for="yes">Very supportive and encouraging</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="relation">
+                                    <label id="no">Not much at all. I wish someone did.</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div>
+          <div class="container box">
+              <div class="row">
+                  <div class="col">
+                     <br>
+                          <li>Any important activities or projects that you’ve been involved with recently.
+                              <ul>
+                                  <br><li><input type="radio" value=10 id="yes" name="activity">
+                                    <label for="yes">Not much,but I am trying every second</label>
+                                  </li>
+                                  <li><input type="radio" value=20 id="yes" name="activity">
+                                    <label for="yes">Several of them.They are the reason for my happiness</label>
+                                  </li>
+                                  <li><input type="radio" value=-20 id="no"name="activity">
+                                    <label id="no">None. I don't feel like doing anything.</label>
+                                </li>
+                              </ul>
+                          </li>                      
+                  </div>
+              </div>
+          </div><br><br>  
+
+          <div align="center">
+          <button class="btn btn-danger">Submit</button>          
+          </div>    
+            
+          </form>          
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body><br><br><br><br><br><br>
+</html>

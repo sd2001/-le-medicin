@@ -3,22 +3,23 @@
         <title>Welcome!</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="css\styles.css " type="text/css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Le Médecine</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      </head>
+      <body>
+          <!--navbar-->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="#">Le Médecine</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="patient_home.html">Home</a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="patient_home.html">Home</a>
+                  </li>
+                  <a class="nav-link" href="doctor_info.html">Consult a Doctor <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="doctor_info.html">Consult a Doctor</a>
-                </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="shop.html">Pharmacy</a>
                 </li>
                 <li class="nav-item">
@@ -30,23 +31,24 @@
               </ul>
             </div>
           </nav>
-
-          <h1 class="text-center"> Self-Assesment Test</h1>
-          <div class="container box">
+          <div class="search box">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+          <div class="container">
               <div class="row">
                   <div class="col">
-                      <ol>
-                          <li>Do you feel like listening to some music?
-                              <ul>
-                                  <li><input type="radio" value="Yes" id="yes" name="choice">
-                                    <label for="yes">Yes</label>
-                                </li>
-                                  <li><input type="radio" value="No" id="no"name="choice">
-                                    <label for="no">No</label>
-                                </li>
-                              </ul>
-                          </li>
-                      </ol>
+                    <div class="card mx-auto shop" style="width: 18rem;">
+                        <img src="assets/medicine.jpg" class="card-img-top" alt="medicine">
+                        <div class="card-body">
+                          <h5 class="card-title">XYZ SHOP</h5>
+                          <p class="card-text">Get your medicines here</p>
+                          <a href="payment_ack.html" class="btn btn-primary">Pick up</a>
+                          <a href="payment_ack.html" class="btn btn-primary">Home Delivery</a>
+                        </div>
+                      </div>
                   </div>
               </div>
           </div>
