@@ -2,7 +2,7 @@
     <head>
         <title>Welcome!</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="css\styles.css " type="text/css">
+        <link rel="stylesheet" href="../static/css/styles.css " type="text/css">
       </head>
       <body>
           <!--navbar-->
@@ -32,26 +32,34 @@
             </div>
           </nav>
           <div class="search box">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="/shop" method='POST'>
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
               </form>
           </div>
+        {% if res==True%}
           <div class="container">
               <div class="row">
                   <div class="col">
-                    <div class="card mx-auto shop" style="width: 18rem;">
-                        <img src="assets/medicine.jpg" class="card-img-top" alt="medicine">
+                    <div class="card mx-auto shop" style="width: 25rem;">
+                        <img src="../static/images/medicine.jpg" class="card-img-top" alt="medicine">
                         <div class="card-body">
                           <h5 class="card-title">XYZ SHOP</h5>
                           <p class="card-text">Get your medicines here</p>
-                          <a href="payment_ack.html" class="btn btn-primary">Pick up</a>
-                          <a href="payment_ack.html" class="btn btn-primary">Home Delivery</a>
+                          <p class="card-text">{{item}} is available</p>
+                          <p class="card-text">Quantity available : Rs {{q}} @ {{p}}/tab</p>
+                          <div align='right'>
+                          <form action="/shop/confirmation" method='POST'>
+                          <a href="/shop/confirmation" class="btn btn-primary">Pick up</a>
+                          <a href="/shop/confirmation" class="btn btn-primary">Home Delivery</a>
+                          </form>
+                          </div>
                         </div>
                       </div>
                   </div>
               </div>
           </div>
+        {%endif%}
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>

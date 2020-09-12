@@ -103,7 +103,7 @@ def self_assess():
             mssg="Its highly important for you to consult Dr A, before something big happens."
         
         flash(mssg)
-        return render_template('self-assessment.html')
+        return render_template('self-assessment2.html')
     return render_template('self-assessment2.html')
 
 @app.route("/tests/inkblot",methods=['GET','POST'])
@@ -118,21 +118,44 @@ def inkblot():
         
         score=score+int(fear)+int(eat)+int(confidence)+int(future)+int(relation)
         mssg=""
-        if score>50 and score<100:
+        if score>=50 and score<100:
             mssg="Great, make your days even better"
-        elif score>100:
+        elif score>=100:
             mssg="Awesome, thats the motivation we need"
         elif score<50 and score>0:
             mssg="Try to stay motivated always. We would recommend you to consult Dr A"            
-        elif score<0:
+        elif score<=0:
             mssg="Its highly important for you to consult Dr A, before something big happens."
         
         flash(mssg)
         return render_template('inkblot.html')
     return render_template('inkblot.html')
+
+
+@app.route("/shop",methods=['GET','POST'])
+def shop_search():
+    items=["A Tabs","B Tabs","C Tabs"]
+    qnty=[10,18,5]
+    price=[10,15,18]
+    res=False
+    if request.method=='POST':       
+        search=request.form.get('search')
+        for i in range(0,len(items)):
+            if search.lower()==items[i].lower():
+                res=True
+                q=qnty[i]
+                p=price[i]
+                return render_template('shop.html',res=res,q=q,p=p,item=search)
+        
+        return render_template('shop.html',res=res)
+    
+    return render_template('shop.html')
+
+@app.route("/shop/confirmation")
+def confirm():
+    return render_template('payment_ack.html')        
         
     
-
 if __name__=="__main__":
     app.run(debug=True)
     
