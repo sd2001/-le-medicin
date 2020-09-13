@@ -12,6 +12,10 @@ app.secret_key = 'hellouserapi'
 def login():    
     return render_template('login.html')
 
+@app.route("/register")
+def reg():
+    return render_template('register.html')
+
 
 
 @app.route("/d",methods=['POST'])
@@ -31,6 +35,10 @@ def patient():
 @app.route("/doctor_home")
 def doctor_home():
     return render_template('doctor_home.html')
+
+@app.route("/doctor_vc")
+def doc_vc():
+    return render_template('doctor_vc.html')
     
 
 @app.route("/tests")
@@ -123,13 +131,22 @@ def inkblot():
         elif score>=100:
             mssg="Awesome, thats the motivation we need"
         elif score<50 and score>0:
-            mssg="Try to stay motivated always. We would recommend you to consult Dr A"            
+            mssg="Try to stay motivated always. We would recommend you to consult a doctor"            
         elif score<=0:
-            mssg="Its highly important for you to consult Dr A, before something big happens."
+            mssg="Its highly important for you to consult a doctor, before something big happens."
         
         flash(mssg)
         return render_template('inkblot.html')
     return render_template('inkblot.html')
+
+@app.route("/doctor_list")
+def doctor_list():
+    return render_template('doctor_info.html')
+
+
+@app.route("/video_patient/<string:name>")
+def v_p(name):
+    return render_template('video_chat.html',name=name)
 
 
 @app.route("/shop",methods=['GET','POST'])
@@ -145,15 +162,19 @@ def shop_search():
                 res=True
                 q=qnty[i]
                 p=price[i]
-                return render_template('shop.html',res=res,q=q,p=p,item=search)
+                return render_template('shop2.html',res=res,q=q,p=p,item=search)
         
-        return render_template('shop.html',res=res)
+        return render_template('shop2.html',res=res)
     
     return render_template('shop.html')
 
 @app.route("/shop/confirmation")
 def confirm():
-    return render_template('payment_ack.html')        
+    return render_template('payment_ack.html')      
+
+@app.route("/logout")
+def logoute():
+    return render_template('register.html')  
         
     
 if __name__=="__main__":
