@@ -31,6 +31,9 @@
               </ul>
             </div>
           </nav>
+          <div align='center'>
+        <h1>Search for nearby Hospitals or Pharmacies :</h1>
+        </div>
       <form action="/nearby" method='POST'> 
           <div class="container">
               <div class="row">
@@ -52,35 +55,40 @@
         <form class="form-inline my-2 my-lg-0 margin">
             <br><input class="form-control mr-sm-2" name="locality" type="search" placeholder="Locality Name" aria-label="Search">
             <div align="center">
-            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            <br><button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </div>
         </form>
       </form>
         </div>
         </div>
         </div>
-        {%if res==True%}
+        {%if res==True:%}
+        <div align='center'>
+        <h1>Search results :</h1>
+        </div>
         {%for name in names:%}
         
         <div class="container box">
             <div class="row">
                 <div class="col">
                 
-                    <p>Name: {{name.title}}</p>
-                    <p>Address:{{name.address}} </p>
-                    {%if name.extensions is not None%}
-                    <p>Timing Details:{{name.extensions[0]}},{{name.extensions[1]}} </p>
+                    <p>Name : {{name.title}}</p>
+                    <p>Address : {{name.address}} </p>
+                    {% if 'extensions' in name: %}
+                    <p>Timing Details : {{name.extensions[0]}},{{name.extensions[1]}} </p>
                     {%endif%}
-                    {%if name.link is not None%}
-                    <p>Website:{{name.link}} </p>
+                    {% if 'link' in name: %}
+                    <p>Website : <a href="{{name.link}}">{{name.link}}</a> </p>
                     {%endif%}
-                    {%if name.type is not None%}
-                    <p>Type: {{name.type}}</p>
+                    {% if 'type' in name: %}
+                    <p>Type : {{name.type}}</p>
                     {%endif%}
                 </div>
             </div>
         </div>
         {%endfor%}
+        {%endif%}
+        <br><br><br><br><br><br>
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
