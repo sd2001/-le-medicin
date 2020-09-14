@@ -188,14 +188,13 @@ def neerby():
             names=hospital_search(locality)
             res=True
             
-        elif choice=='Pharmacy':
+        else:
             names=pharmacy_search(locality)
             res=True
             
-        render_template('hospital.html',res=res,names=names)
+        return render_template('hospital.html',res=res,names=names)        
         
-        
-    return render_template('hospital.html',res=False)
+    return render_template('hospital.html',res=res)
         
     
 if __name__=="__main__":
