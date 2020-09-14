@@ -4,6 +4,7 @@ import torch
 import json
 from model import NeuralNet
 from basics import bag_of_words, tokenize, stem
+from nearby import hospital_search,pharmacy_search
 
 app=Flask(__name__)
 app.secret_key = 'hellouserapi'
@@ -175,6 +176,26 @@ def confirm():
 @app.route("/logout")
 def logoute():
     return render_template('register.html')  
+
+@app.route("/nearby",methods=['GET','POST'])
+def neerby():
+    res=False
+    if request.method=='POST':
+        choice=request.form.get('choice')
+        locality=request.form.get('locality')
+        
+        if choice=='Hospital':
+            names=hospital_search(locality)
+            res=True
+            
+        elif choice=='Pharmacy':
+            names=pharmacy_search(locality)
+            res=True
+            
+        render_template('hospital.html',res=res,names=names)
+        
+        
+    return render_template('hospital.html',res=False)
         
     
 if __name__=="__main__":
