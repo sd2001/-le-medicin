@@ -12,14 +12,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                  <a class="nav-link" href="/tests">Tests <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="/doctor_list">Consult a Doctor <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/tests">Home  <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/shop">Shop</a>
+                  <a class="nav-link" href="/doctor_list">Consult a Doctor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/shop">Pharmacy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nearby">Near Me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/prescription">Prescriptions</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
@@ -33,7 +39,7 @@
           {% with messages = get_flashed_messages() %}
 						{% if messages %}
 						<div align ='center' class="container box">
-								{{messages[0]}}
+								<h3>{{messages[0]}}</h3>
 							</div>
 						{% endif %}
 					{% endwith %} 

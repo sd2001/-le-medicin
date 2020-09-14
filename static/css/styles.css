@@ -36,6 +36,15 @@ h4{
 h6{
 font-size:18px;
 }
+h5{
+    font-size:22px;
+    color: rgb(241, 71, 41)
+    }
+
+h3{
+    font-size:35px;
+    color: rgb(29, 109, 230)
+    }
 .box{
     margin-top:30px;
     padding:20px;
