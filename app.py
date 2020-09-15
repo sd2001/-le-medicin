@@ -14,12 +14,7 @@ from datetime import date
 app=Flask(__name__)
 app.secret_key = 'hellomic'
 
-@app.before_request
-def before_request():
-    g.user=None
-    det=[]
-    if 'user' in session:
-        g.user=session['user']
+
 
 @app.route("/")
 def login():    
@@ -52,11 +47,13 @@ def doctor():
 
 @app.route("/p",methods=['POST'])
 def patient():
+    session.pop('user',None)
     email_p=None
     pass_p=None
     email_p=request.form.get('patient_email')
     pass_p=request.form.get('patient_pass')
     if email_p=='s@s.com' and pass_p=='12345':
+        session['user']=email_p
         return redirect(url_for('test'))
     elif email_p is None or pass_p is None:
         flash("Please fill in both the fields")
@@ -272,7 +269,13 @@ def neerby():
     
     flash("Please login before continuing")
     return render_template('login.html',user='g') 
-        
+
+@app.before_request
+def before_request():
+    g.user=None
+    det=[]
+    if 'user' in session:
+        g.user=session['user']        
     
 if __name__=="__main__":
     app.run(debug=True)
