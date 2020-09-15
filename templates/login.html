@@ -27,6 +27,13 @@
 
           
       <h1 class="text-center welcome">Welcome to Le Médecine!</h1>
+      {% with messages = get_flashed_messages() %}
+						{% if messages and user=='g': %}
+              <div align='center'>
+              <h5>{{messages[0]}}</h5>
+              </div>
+            {% endif %}
+				{% endwith %}
 <div class="container box">
   <div class="row">
     <div class="col-5">
