@@ -112,3 +112,7 @@ select{
     float:right;
     margin:20px;
 }
+#illness-details{
+border-radius: 5px;
+margin:10px;
+}
