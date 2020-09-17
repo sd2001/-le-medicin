@@ -12,9 +12,10 @@ import time
 from datetime import date
 
 app=Flask(__name__)
-app.secret_key = 'hellomic'
-
-
+app.secret_key='hello_mic'
+client=MongoClient("mongodb+srv://swarnabha:sddb@cluster0.yxfcm.mongodb.net/MIC-Silicon?retryWrites=true&w=majority")
+db=client['Patient']
+data=db.Prescriptions
 
 @app.route("/")
 def login():    
@@ -234,8 +235,8 @@ def confirm():
 
 @app.route("/prescription")
 def pres():
-    if g.user:
-        return render_template('prescription.html')  
+    if g.user:            
+        return render_template('prescription.html',p=data)  
     flash("Please login before continuing")
     return render_template('login.html',user='g')   
 

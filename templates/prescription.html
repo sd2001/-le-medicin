@@ -35,27 +35,29 @@
             </div>
           </nav>
           <h1 class="text-center">List of all your Prescriptions</h1>
+          {%for i in p.find():%}
           <div class="container box">
               <div class="row">
                   <div class="col-8">
                       <p>
-                          <strong>Doctor Name: </strong> 
+                          <strong>Doctor Name: </strong>{{i.Doctor}} 
                       </p>
                       <p>
-                          <strong>Problem/Illness: </strong> 
+                          <strong>Problem/Illness: </strong>{{i.Illness}} 
                       </p>
                       <p>
-                          <strong>Medicine: </strong>
+                          <strong>Medicine: </strong>{{i.Medicine}}
                       </p>
                       <p>
-                          <strong>Quantity: </strong> 
+                          <strong>Quantity: </strong>{{i.Quantity}} 
                       </p>
                       <p>
-                          <strong>Date: </strong> 
+                          <strong>Date: </strong>{{i.date}} 
                       </p>
                   </div>                 
               </div>
           </div>
+          {%endfor%}
           
           <br><br><br><br><br><br>
           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
