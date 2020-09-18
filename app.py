@@ -9,6 +9,7 @@ import pymongo
 from pymongo import MongoClient
 from flask_login import login_user,current_user
 import time
+from datetime import datetime
 from datetime import date
 
 app=Flask(__name__)
@@ -74,8 +75,20 @@ def doctor_home():
 @app.route("/doctor_vc",methods=['GET','POST'])
 def doc_vc():
     if request.method=='POST':
-        illness=request.form.get()
-        
+        illness=request.form.get('details')
+        med=request.form.get('Med')
+        qnty=request.form.get('qnty')
+        name="Dr P.Gandhi"
+        today = date.today()
+        date1=today.strftime("%d/%m/%Y")
+        doc={'Doctor':name,
+        'Illness':illness,
+        'Medicine':med,
+        'Quantity':qnty,
+        'date':date1}
+        data.insert_one(doc)
+        return redirect(url_for('doctor_home'))  
+
     return render_template('doctor_vc.html')
     
 
