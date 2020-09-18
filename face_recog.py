@@ -2,16 +2,16 @@ import numpy as np
 import face_recognition as fr
 import cv2
 
-video_capture = cv2.VideoCapture(0)
+video = cv2.VideoCapture(0)
 
-my_image = fr.load_image_file("1.jpg")
+my_image = fr.load_image_file("2.jpg")
 my_face_encoding = fr.face_encodings(my_image)[0]
 
 known_face_encondings = [my_face_encoding]
-known_face_names = ["Sreevishnu"]
+known_face_names = ["SD"]
 
 while True: 
-    ret, frame = video_capture.read()
+    ret, frame = video.read()
 
     rgb_frame = frame[:, :, ::-1]
 
@@ -41,5 +41,5 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-video_capture.release()
+video.release()
 cv2.destroyAllWindows()
