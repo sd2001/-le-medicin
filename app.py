@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,flash,redirect,url_for,g,session
+from flask import Flask,render_template,request,flash,redirect,url_for,g,session,Response
 import random
 import torch
 import json
@@ -11,6 +11,10 @@ from flask_login import login_user,current_user
 import time
 from datetime import datetime
 from datetime import date
+from camera import VideoCamera
+import numpy as np
+import face_recognition as fr
+import cv2
 
 app=Flask(__name__)
 app.secret_key='hello_mic'
@@ -21,13 +25,76 @@ data=db.Prescriptions
 @app.route("/")
 def login():    
     if g.user:
-        return redirect(url_for('test'))
+        return redirect(url_for('test'))    
     return render_template('login.html')
 
 @app.route("/register")
 def reg():
     return render_template('register.html')
+ds_factor=0.6
 
+@app.route('/face_login')
+def index():
+    # rendering webpage
+    return render_template('face.html')
+
+def gen(camera):
+    while True:
+        #get camera frame
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(VideoCamera()),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+def capture():    
+    video = cv2.VideoCapture(0)
+    face_cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+    ret, frame = video.read()
+    face_rects=face_cascade.detectMultiScale(frame,1.3,5)
+
+    my_image = fr.load_image_file("2.jpg")
+    my_face_encoding = fr.face_encodings(my_image)[0]
+
+    known_face_encondings = [my_face_encoding]
+    known_face_names = ["SD"]       
+
+    rgb_frame = frame[:, :, ::-1]
+
+    face_locations = fr.face_locations(rgb_frame)
+    face_encodings = fr.face_encodings(rgb_frame, face_locations)
+
+    for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
+
+        matches = fr.compare_faces(known_face_encondings, face_encoding)
+
+        name = "Unknown"
+
+        face_distances = fr.face_distance(known_face_encondings, face_encoding)
+
+        best_match_index = np.argmin(face_distances)
+
+        if matches[best_match_index]:
+            name = known_face_names[best_match_index]
+            return True
+    
+        
+    return False
+
+
+@app.route('/get_p')
+def click():
+    res=capture()
+    if res==True:
+        session['user']="s@s.com"
+        return redirect(url_for('test'))
+    else:
+        flash("Face doesn't match/Not detected. Try Again")
+        return render_template("face.html")
 
 
 @app.route("/d",methods=['POST'])
@@ -287,12 +354,14 @@ def neerby():
     flash("Please login before continuing")
     return render_template('login.html',user='g') 
 
+
 @app.before_request
 def before_request():
     g.user=None
     det=[]
     if 'user' in session:
-        g.user=session['user']        
+        g.user=session['user']  
+              
     
 if __name__=="__main__":
     app.run(debug=True)
