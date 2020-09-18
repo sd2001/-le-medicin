@@ -71,8 +71,11 @@ def patient():
 def doctor_home():
     return render_template('doctor_home.html')
 
-@app.route("/doctor_vc")
+@app.route("/doctor_vc",methods=['GET','POST'])
 def doc_vc():
+    if request.method=='POST':
+        illness=request.form.get()
+        
     return render_template('doctor_vc.html')
     
 

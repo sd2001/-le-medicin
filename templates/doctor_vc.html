@@ -1,8 +1,8 @@
 <html>
     <head>
-        <title>Video Chat</title>
+        <title>Welcome!</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="../static/css/styles.css " type="text/css">
+        <link rel="stylesheet" href="..\static\css\styles.css " type="text/css">
       </head>
       <body>
           <!--navbar-->
@@ -13,22 +13,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="/doctor_home">Patient's Detail<span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/doctor">Patient's Detail</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/doctor_vc">Appointment<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Logout</a>
                   </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/doctor_vc">Appointment</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/logout">Logout</a>
-                    </li>
               </ul>
             </div>
           </nav>
           <div class="container">
               <div class="row">
                   <div class="col">
-                      <iframe allow="geolocation; microphone; camera; midi; encrypted-media;" src="https://zipcall.io/join/sdsd2001" title="call" height="700" width="100%">
+                      <iframe src="https://zipcall.io/join/sdsd2001" title="call" height="500" width="100%">
                       </iframe>
                   </div>
               </div>
@@ -38,9 +39,12 @@
               <h1 class="display-4">Patient's illness</h1>
               <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
               <div class="search">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" name="illness" type="text" placeholder="Illness in brief" aria-label="Medicine">
-                    <input class="form-control mr-sm-2" name="medicine" type="text" placeholder="Medicine" aria-label="Medicine">
+                <form class="form-inline my-2 my-lg-0" action="/doctor_vc" method='POST'>
+                  <label>Brief about Illness</label>
+                  <textarea id="illness-details" name="details" rows="4" cols="50">
+
+                  </textarea>
+                    <input class="form-control mr-sm-2" type="text" placeholder="Medicine" aria-label="Medicine">
                     <label for="medicine"></label>
 
                     <select name="meds" id="meds">
