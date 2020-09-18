@@ -36,9 +36,11 @@
           </nav>
           <h1 class="text-center">List of all your Prescriptions</h1>
           {% for i in p.find().sort([("_id", -1)]): %}
-          <div class="container box">
+          <div class="container box" >
+          
               <div class="row">
                   <div class="col-8">
+                   
                       <p>
                           <strong>Doctor Name: </strong>{{i.Doctor}} 
                       </p>
@@ -56,6 +58,7 @@
                       </p>
                   </div>                 
               </div>
+              
           </div>
           {%endfor%}
           
