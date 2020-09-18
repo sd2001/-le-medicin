@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Near Me</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/styles.css " type="text/css">
+      </head>
+      <body>
+          <!--navbar-->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="#">Le Médecine</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/tests">Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/doctor_list">Consult a Doctor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/shop">Pharmacy</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/nearby">Near Me <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/prescription">Prescriptions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+          <div align='center'>
+        <h1>Search for nearby Hospitals or Pharmacies :</h1>
+        </div>
+      <form action="/nearby" method='POST'> 
+          <div class="container">
+              <div class="row">
+                  <div class="col-6">
+              
+          <ul class="hosp">
+      
+            <li><input type="radio" value="Hospital" id="Hospital" name="choice">
+              <label for="Hospital">Hospital</label>
+          </li>
+            <li><input type="radio" value="Pharmacy" id="Pharmacy"name="choice">
+              <label for="Pharmacy">Pharmacy</label>
+          </li>
+        </ul>
+                </div>
+                <div class="col-6">
+                
+                
+        <form class="form-inline my-2 my-lg-0 margin">
+            <br><input class="form-control mr-sm-2" name="locality" type="search" placeholder="Locality Name" aria-label="Search">
+            <div align="center">
+            <br><button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </div>
+        </form>
+      </form>
+        </div>
+        </div>
+        </div>
+        {%if res==True:%}
+        <div align='center'>
+        <h1>Search results :</h1>
+        </div>
+        {%for name in names:%}
+        
+        <div class="container box">
+            <div class="row">
+                <div class="col">
+                
+                    <p>Name : {{name.title}}</p>
+                    <p>Address : {{name.address}} </p>
+                    {% if 'extensions' in name: %}
+                    <p>Timing Details : {{name.extensions[0]}},{{name.extensions[1]}} </p>
+                    {%endif%}
+                    {% if 'link' in name: %}
+                    <p>Website : <a href="{{name.link}}">{{name.link}}</a> </p>
+                    {%endif%}
+                    {% if 'type' in name: %}
+                    <p>Type : {{name.type}}</p>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        {%endif%}
+        <br><br><br><br><br><br>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>

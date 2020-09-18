@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Shop</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/css/styles.css " type="text/css">
+      </head>
+      <body>
+          <!--navbar-->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="#">Le Médecine</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/tests">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/doctor_list">Consult a Doctor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/shop">Pharmacy  <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nearby">Near Me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/prescription">Prescriptions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+          <h1 class="text-center">Search for your Medicine</h1>
+          <div class="search box">
+            <form class="form-inline my-2 my-lg-0" action="/shop" method='POST'>
+                <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search" style="width:90%;">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+          <h1 class="text-center">Search Results :</h1>
+          {% if res==True%}
+          <div class="container box">
+              <div class="row">
+                  <div class="col-9">
+                    <!--<div class="card mx-auto shop" style="width: 18rem;">
+                        <img src="assets/medicine.jpg" class="card-img-top" alt="medicine">
+                        <div class="card-body">
+                          <h5 class="card-title">XYZ SHOP</h5>
+                          <p class="card-text">Get your medicines here</p>
+                          <a href="payment_ack.html" class="btn btn-primary">Pick up</a>
+                          <a href="payment_ack.html" class="btn btn-primary">Home Delivery</a>
+                        </div>
+                      </div>-->
+                      <img src="../static/images/medicine.jpg" class="float"alt="medicine" height="50" width="50">
+                      <h5>XYZ SHOP : Get Your Medicines here</h5>                      
+                      <p class="card-text">{{item}} is available | Quantity available : {{q}} @ Rs{{p}}/tab</p>
+                      <p class="card-text"></p>
+                    </div>
+                      <div class="col-3">
+                      <a href="/shop/confirmation" class="btn btn-primary float-right">Pick up</a>
+                          <a href="/shop/confirmation" class="btn btn-primary float-right">Home Delivery</a>
+                  </div>
+              </div>
+          </div>
+          {%endif%}
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+</html>

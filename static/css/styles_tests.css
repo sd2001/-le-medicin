@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #6abf69;
+}
+.navbar-brand{
+    font-family:'Dancing Script', cursive;
+    font-size:2rem;
+}
+.container{
+    width:800px
+}
+
+.bg-dark{
+    background-color: #388e3c !important;
+
+}
+.welcome{
+    margin-top:20px;
+    font-family:'Dancing Script', cursive;
+}
+h1{
+    margin-top:20px;
+}
+.box{
+    margin-top:30px;
+    padding:20px;
+    border-style:solid;
+    background-color: /*#dcedc8*/ #c5e1a5;
+}
+
+.box2{
+    margin-top:30px;
+    padding:20px;
+    border-style:solid;
+    background-color: /*#dcedc8*/ #77a6db;    
+}
+.btn-primary{
+    background-color: #cddc39;
+    border-color:#99aa00;
+    color:#000;
+}
+.btn-primary a{
+    color:#000!important;
+}
+.btn-primary:hover{
+    background-color:#99aa00;
+
+}
+
+.jumbotron{
+    background-color: #6abf69;
+}
+h6 a{
+    color:black;
+}
+ul{
+    list-style-type: none;
+    padding:20px;
+}
+ol{
+    padding:10px;
+}

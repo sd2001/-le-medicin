@@ -1,0 +1,50 @@
+<html>
+    <head>
+<title>
+    Le Medicin
+</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/css/styles.css " type="text/css">
+    </head>
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Le Médecine</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Register</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      
+        <h1 class="text-center welcome">Face Recognition</h1>
+      
+      <div align='center'>
+        <img id="bg" width=700px height=500px src="{{ url_for('video_feed') }}">
+      </div>
+      {% with messages = get_flashed_messages() %}
+						{% if messages:%}
+              <br><br><br>
+              <div align='center'>
+              <h5>{{messages[0]}}</h5>
+              </div>
+            {% endif %}
+				{% endwith %}
+      
+      <br><br>
+      <div align='center'>  
+      <a href='/get_p'>
+        <button type="submit" class="btn btn-primary">Capture Image</button>
+      </a>
+
+      </div>
+  </body>
+</html>
