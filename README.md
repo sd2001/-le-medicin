@@ -9,7 +9,7 @@
   
   <h3>Team Members🤝</h3>
   
-  <a href="https://github.com/anvsreevishnu"> **ANV Sreevishnu** </a>
+  <a href="https://github.com/anvsreevishnu"> **A N V Sreevishnu** </a>
   
   <a href="https://github.com/Palveet"> **Palveet Kaur Saluja** </a>
   
@@ -50,6 +50,6 @@
  * Video Sockets (Zipcall.io) 
  
  <div align="center">
- ***📸Brainstormed and Developed during 8th-19th Sepetember'2020🕹️***
+  <h3>📸Brainstormed and Developed during 8th-19th Sepetember'2020🕹️</h3>
  </div>
  
