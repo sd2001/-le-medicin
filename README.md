@@ -16,7 +16,7 @@
   <a href="https://github.com/sd2001"> **Swarnabha Das** </a>
   <hr>
     
-  ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup.png)  
+  ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockupp.png)  
   
   <h3>📟Our Hack in brief🖥️</h3>
   
@@ -38,6 +38,34 @@
   ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup2.png)
   
 <hr>
+<div align="center">
+  <h2>🥳Workflow🤩</h2>
+ </div>
+ 
+ <div align="center">
+  
+  <h3>Login</h3>
+ 
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/login.gif)
+ 
+ <h3>Tests</h3>
+ 
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/tests.gif)
+ 
+ <h3>Our Chatbot</h3>
+ 
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/chatbot.gif)
+ 
+ <h3>Video Calling</h3>
+ 
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/vc.gif)
+  
+ <h3>User Friendly Features</h3>
+ 
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/best.gif)
+ 
+ </div>
+ 
  
  <h3> 🖲️Tech Stack🖱</h3>
  
