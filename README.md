@@ -1,23 +1,26 @@
 <div align='center'>
-Official Repository for Intra MIC hackathon-Team Silicon
+👨‍💻Official Repository for Intra MIC hackathon-Team Silicon👩‍💻
   </div>
  
 <div align="center">
-  <h2>Project Name : 'le médecin'</h2>
+  <h2>💻Project Name : 'le médecin'📱</h2>
   
-  <h2>Track : Miscellaneous - Healthcare</h2>
+  <h2>🛣️Track : Miscellaneous - Healthcare🩺</h2>
   
-  <h3>Team Members</h3>
+  <h3>Team Members🤝</h3>
   
   **ANV Sreevishnu**
   
   **Palveet Kaur Saluja** 
   
   **Swarnabha Das**
+  <hr>
     
   ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup.png)  
   
-  <h3> Our Hack in brief </h3>
+  <h3>📟Our Hack in brief🖥️</h3>
+  
+  </div>
   
 * A multi-purpose web-app with a vision to digitalize healthcare systems. 
 
@@ -34,16 +37,18 @@ Official Repository for Intra MIC hackathon-Team Silicon
   
   ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup2.png)
   
- </div>
+<hr>
  
- <h3> Tech Stack </h3>
+ <h3> 🖲️Tech Stack🖱</h3>
  
  * Frontend (HTML,CSS,JS)
  
- * Backend (Python-Flask)
+ * Backend (Python-Flask, MongoDB)
  
  * Machine Learning (Python, Pytorch)
  
  * Video Sockets (Zipcall.io) 
+ 
+ 📸***Brainstormed and Developed during 8th-19th Sepetember'2020***🕹️
  
  
