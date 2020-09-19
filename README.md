@@ -1,5 +1,5 @@
 <div align='center'>
-👨‍💻Official Repository for Intra MIC hackathon-Team Silicon👩‍💻
+  <h2>👨‍💻Official Repository for Intra MIC hackathon-Team Silicon👩‍💻</h2>
   </div>
  
 <div align="center">
@@ -50,6 +50,6 @@
  * Video Sockets (Zipcall.io) 
  
  <div align="center">
- 📸***Brainstormed and Developed during 8th-19th Sepetember'2020***🕹️
+ ***📸Brainstormed and Developed during 8th-19th Sepetember'2020🕹️***
  </div>
  
