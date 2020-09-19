@@ -18,7 +18,7 @@ import cv2
 
 app=Flask(__name__)
 app.secret_key='hello_mic'
-client=MongoClient("mongodb+srv://swarnabha:sddb@cluster0.yxfcm.mongodb.net/MIC-Silicon?retryWrites=true&w=majority")
+client=MongoClient("mongodb+srv://swarnabha:<pass>@cluster0.yxfcm.mongodb.net/MIC-Silicon?retryWrites=true&w=majority")
 db=client['Patient']
 data=db.Prescriptions
 
