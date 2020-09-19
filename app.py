@@ -192,6 +192,7 @@ def chatbot():
     model = NeuralNet(input_size, hidden_size, output_size).to(device)
     model.load_state_dict(model_state)
     model.eval()
+   
     sentence = request.args.get("msg") #get data from input,we write js  to index.html
     sentence=tokenize(sentence)
     X=bag_of_words(sentence,all_words)
@@ -203,12 +204,16 @@ def chatbot():
     bot="I do not know...try something different😊"
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    if prob.item() > 0.75:
+    print(prob.item())
+    if prob.item() < 0.75:
+        bot="I do not know...try something different😊"
+        
+    
+    elif prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                bot=random.choice(intent['responses'])
-    else:
-        bot="I do not know...try something different😊"
+                bot=random.choice(intent['responses'])      
+        
         
     return bot
 
