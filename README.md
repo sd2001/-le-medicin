@@ -9,11 +9,11 @@
   
   <h3>Team Members🤝</h3>
   
-  **ANV Sreevishnu**
+  <a href="https://github.com/anvsreevishnu"> **ANV Sreevishnu** </a>
   
-  **Palveet Kaur Saluja** 
+  <a href="https://github.com/Palveet"> **Palveet Kaur Saluja** </a>
   
-  **Swarnabha Das**
+  <a href="https://github.com/sd2001"> **Swarnabha Das** </a>
   <hr>
     
   ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup.png)  
@@ -49,6 +49,7 @@
  
  * Video Sockets (Zipcall.io) 
  
+ <div align="center">
  📸***Brainstormed and Developed during 8th-19th Sepetember'2020***🕹️
- 
+ </div>
  
