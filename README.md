@@ -9,11 +9,11 @@ Official Repository for Intra MIC hackathon-Team Silicon
   
   <h3>Team Members</h3>
   
-  * **ANV Sreevishnu**
+  **ANV Sreevishnu**
   
-  * **Palveet Kaur Saluja** 
+  **Palveet Kaur Saluja** 
   
-  * **Swarnabha Das**
+  **Swarnabha Das**
     
   ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup.png)  
   
