@@ -3,7 +3,7 @@
   </div>
  
 <div align="center">
-  <h2>💻Project Name : 'le médecin'📱</h2>
+  <h2>💻Project Name : 'le médicin'📱</h2>
   
   <h2>🛣️Track : Miscellaneous - Healthcare🩺</h2>
   
