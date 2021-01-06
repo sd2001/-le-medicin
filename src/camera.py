@@ -21,7 +21,7 @@ class VideoCamera(object):
         for (x,y,w,h) in face_rects:
             cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
             break
-        # encode OpenCV raw frame to jpg and displaying it
+        # # encode OpenCV raw frame to jpg and displaying it
         ret, jpeg = cv2.imencode('.jpg', frame)
         return jpeg.tobytes()
 

@@ -12,7 +12,7 @@ def gen(camera):
     while True:
         #get camera frame
         frame = camera.get_frame()
-        yield (b'--frame\r\n'
+        yield(b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 @app.route('/video_feed')

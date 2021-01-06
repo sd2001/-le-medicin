@@ -1,27 +1,32 @@
+# Importing necessary modules
 from flask import Flask,render_template,request,flash,redirect,url_for,g,session,Response
 import random
 import torch
 import json
-from model import NeuralNet
-from basics import bag_of_words, tokenize, stem
-from nearby import hospital_search,pharmacy_search
+from src.model import NeuralNet
+from src.basics import bag_of_words, tokenize, stem
+from src.nearby import hospital_search,pharmacy_search
 import pymongo
 from pymongo import MongoClient
 from flask_login import login_user,current_user
 import time
 from datetime import datetime
 from datetime import date
-from camera import VideoCamera
+from src.camera import VideoCamera
 import numpy as np
 import face_recognition as fr
 import cv2
+from decouple import config
 
+
+#connecting to out MongoDB Database
 app=Flask(__name__)
-app.secret_key='hello_mic'
-client=MongoClient("mongodb+srv://swarnabha:<pass>@cluster0.yxfcm.mongodb.net/MIC-Silicon?retryWrites=true&w=majority")
+app.secret_key=config('secretLeMedicin')
+client=MongoClient(config('LeMedicinMongo'))
 db=client['Patient']
 data=db.Prescriptions
 
+# app route for login/register pages
 @app.route("/")
 def login():    
     if g.user:
@@ -31,13 +36,13 @@ def login():
 @app.route("/register")
 def reg():
     return render_template('register.html')
-ds_factor=0.6
 
 @app.route('/face_login')
 def index():
     # rendering webpage
     return render_template('face.html')
 
+# get the live feed from webcam
 def gen(camera):
     while True:
         #get camera frame
@@ -51,6 +56,7 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
+# face recognition based login
 def capture():    
     video = cv2.VideoCapture(0)
     face_cascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
@@ -85,7 +91,7 @@ def capture():
         
     return False
 
-
+#  route for setting up the sessions if creditials/face matches
 @app.route('/get_p')
 def click():
     res=capture()
@@ -96,7 +102,7 @@ def click():
         flash("Face doesn't match/Not detected. Try Again")
         return render_template("face.html")
 
-
+# login validations for patient and doctor login
 @app.route("/d",methods=['POST'])
 def doctor():
     email_d=None
@@ -158,7 +164,7 @@ def doc_vc():
 
     return render_template('doctor_vc.html')
     
-
+# features of the web app
 @app.route("/tests")
 def test():
     if g.user:
@@ -174,13 +180,13 @@ def chat():
     flash("Please login before continuing")
     return render_template('login.html',user='g') 
 
-@app.route("/tests/chatbot_get")
+@app.route("/tests/chatbot_get",methods=['GET'])
 def chatbot():
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     with open('intents.json','r') as f:
         intents=json.load(f)        
-    FILE="data.pth"
+    FILE="src/data.pth"
     data=torch.load(FILE)
     input_size = data["input_size"]
     hidden_size = data["hidden_size"]
@@ -204,12 +210,12 @@ def chatbot():
     bot="I do not know...try something different😊"
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    print(prob.item())
-    if prob.item() < 0.75:
+    #print(prob.item())
+    if prob.item() < 0.8:
         bot="I do not know...try something different😊"
         
     
-    elif prob.item() > 0.75:
+    elif prob.item() >=0.8:
         for intent in intents['intents']:
             if tag == intent["tag"]:
                 bot=random.choice(intent['responses'])      
@@ -359,7 +365,7 @@ def neerby():
     flash("Please login before continuing")
     return render_template('login.html',user='g') 
 
-
+# check if there's already an existing session 
 @app.before_request
 def before_request():
     g.user=None

@@ -16,7 +16,7 @@
   <a href="https://github.com/sd2001"> **Swarnabha Das** </a>
   <hr>
     
-  ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockupp.png)  
+  ![Images](https://github.com/sd2001/-le-medicin/blob/master/Images/mockupp.png)  
   
   <h3>📟Our Hack in brief🖥️</h3>
   
@@ -35,7 +35,7 @@
 * Searching for nearby available Hospitals and Pharmacies as per patient's choice made easier and convenient.
 
   
-  ![Images](https://github.com/sd2001/-le-medicin/blob/master/mockup2.png)
+  ![Images](https://github.com/sd2001/-le-medicin/blob/master/Images/mockup2.png)
   
 <hr>
 <div align="center">
@@ -46,23 +46,23 @@
   
   <h3>Login</h3>
  
- ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/login.gif)
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/Gifs/login.gif)
  
  <h3>Tests</h3>
  
- ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/tests.gif)
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/Gifs/tests.gif)
  
  <h3>Our Chatbot</h3>
  
- ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/chatbot.gif)
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/Gifs/chatbot.gif)
  
  <h3>Video Calling</h3>
  
- ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/vc.gif)
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/Gifs/vc.gif)
   
  <h3>User Friendly Features</h3>
  
- ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/best.gif)
+ ![Gifs](https://github.com/sd2001/-le-medicin/blob/master/Gifs/best.gif)
  
  </div>
  
@@ -76,8 +76,23 @@
  * Machine Learning (Python, Pytorch)
  
  * Video Sockets (Zipcall.io) 
+
+ <h3> How to Start the App</h3>
+
+ * Fork and Clone the Repository
+
+ * Open you Terminal in that folder
+ ```
+ cd -le-medicin
+ ```
+ 
+ * python app.py
+ 
+ **And Congo! Its serving on http://localhost:5000**
  
  <div align="center">
-  <h3>📸Brainstormed and Developed during 8th-19th Sepetember'2020🕹️</h3>
+  <h3>📸Brainstormed and Developed during 12th-19th Sepetember'2020🕹️</h3>
  </div>
+
+
  
