@@ -63,7 +63,7 @@ def capture():
     ret, frame = video.read()
     face_rects=face_cascade.detectMultiScale(frame,1.3,5)
 
-    my_image = fr.load_image_file("2.jpg")
+    my_image = fr.load_image_file("Images/2.jpg")
     my_face_encoding = fr.face_encodings(my_image)[0]
 
     known_face_encondings = [my_face_encoding]
