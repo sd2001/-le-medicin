@@ -38,7 +38,8 @@ tags = sorted(set(tags))
 print(len(xy), "patterns")
 print(len(tags), "tags:", tags)
 print(len(all_words), "unique stemmed words:", all_words)
-
+# LeMedicinMongo = "mongodb+srv://swarnabha:sddb@cluster0.yxfcm.mongodb.net/MIC-Silicon?retryWrites=true&w=majority"
+# export secretLeMedicin = "hello_mic"
 # create training data
 X_train = []
 y_train = []

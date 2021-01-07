@@ -19,7 +19,8 @@ import cv2
 from decouple import config
 
 
-#connecting to out MongoDB Database
+#connecting to out MongoDB Database using decouple
+
 app=Flask(__name__)
 app.secret_key=config('secretLeMedicin')
 client=MongoClient(config('LeMedicinMongo'))
