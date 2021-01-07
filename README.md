@@ -83,7 +83,7 @@
 
  * Open you Terminal in that folder
  ```
- cd -le-medicin
+ yourID@yourPCname:/Projects$ cd -le-medicin
  ```
  
  * python app.py
